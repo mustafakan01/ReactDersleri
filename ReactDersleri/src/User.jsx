@@ -1,9 +1,17 @@
-function User(props) {
-    console.log(props)
+function User(name, surname, friends, isLoggedIn) {
+
     return ( 
-        <div>
-            <h1>{props.isLoggedIn ? `Benim adım ${props.name} soyadım ${props.surname}` : `Giriş yapınız.` }</h1>
-        </div>
+        <>
+            <h1>{isLoggedIn ? `Benim adım ${name} soyadım ${surname}` : `Giriş yapınız.` }</h1>
+
+
+            {
+                friends.map((friends, index) => 
+                <div>{index} -{friends}  </div> ) 
+            }
+
+        </>
+        
      );
 }
 

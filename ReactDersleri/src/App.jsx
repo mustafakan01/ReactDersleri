@@ -11,7 +11,7 @@ function App() {
       <Header></Header> */}
       {/* <h1>{isLoggedIn ? `Benim adım ${name} soyadım ${surname}` : `Giriş yapınız.`}</h1> */}
 
-      <User name="Mustafa" surname="Kan" isLoggedIn={false}></User>
+      <User name="Mustafa" surname="Kan" isLoggedIn={false} friends={["Eda", "Ahmet", "Elif"]}></User>
 
     </div>
   )
