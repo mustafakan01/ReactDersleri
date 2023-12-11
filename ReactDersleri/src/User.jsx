@@ -1,4 +1,4 @@
-function User(name, surname, friends, isLoggedIn) {
+function User({name, surname, friends, isLoggedIn}) {
 
     return ( 
         <>
@@ -6,8 +6,11 @@ function User(name, surname, friends, isLoggedIn) {
 
 
             {
-                friends.map((friends, index) => 
-                <div>{index} -{friends}  </div> ) 
+                friends.map((friend, index) => (
+                    <div key={index} >{index} -{friend}  </div> )
+
+                ) 
+                 
             }
 
         </>
