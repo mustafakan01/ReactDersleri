@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Counter from './assets/components/Counter';
+import Counter from './components/Counter';
 
 import './App.css'
 
@@ -33,8 +33,8 @@ function App() {
       <button onClick={()=> setAdress ({title:"Mersin", zip: 333333})}>Adres değiştir </button>
       <hr /><br />
 
+      
       <Counter></Counter>
-
 
     </div>
   )
