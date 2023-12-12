@@ -31,6 +31,7 @@ function App() {
       </div><br />
 
       <button onClick={()=> setAdress ({title:"Mersin", zip: 333333})}>Adres değiştir </button>
+      <hr /><br />
 
       <Counter></Counter>
 
