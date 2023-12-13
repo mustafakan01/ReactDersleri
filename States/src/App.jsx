@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Counter from './components/Counter';
-
 import './App.css'
+import InputExample from './components/InputExample';
 
 
 function App() {
@@ -34,7 +34,9 @@ function App() {
       <hr /><br />
 
       
-      <Counter></Counter>
+      <Counter></Counter> <hr /><br />
+
+      <InputExample></InputExample>
 
     </div>
   )
