@@ -1,11 +1,21 @@
 import React, { useState } from 'react'
 
-function Form() {
+function Form({addContact,contacts}) {
 
     const [form, setForm]= useState({fullname:"", phone_number:""})
 
     const onChanceInput=(e)=>{
         setForm({...from,[e.target.name]:e.target.value})
+    }
+
+    const onSubmit=(e)=>{
+        e.preventDefault();
+
+        if(form.fullname==="" || form.phone_number==="")
+        {
+            addContact([...contacts,form])
+            console.log(form)
+        }
     }
 
   return (
