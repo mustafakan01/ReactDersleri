@@ -1,34 +1,42 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
-function Form({addContact,contacts}) {
+const initialFormValues = { fullname: "", phone_number: "" };
 
-    const [form, setForm]= useState({fullname:"", phone_number:""})
+function Form({ addContact, contacts }) {
+    const [form, setForm] = useState(initialFormValues);
 
-    const onChanceInput=(e)=>{
-        setForm({...from,[e.target.name]:e.target.value})
-    }
+    useEffect(() => {
+        setForm(initialFormValues);
+    }, []);
 
-    const onSubmit=(e)=>{
+    const onChangeInput = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value });
+    };
+
+    const onSubmit = (e) => {
         e.preventDefault();
 
-        if(form.fullname==="" || form.phone_number==="")
-        {
-            addContact([...contacts,form])
-            console.log(form)
+        if (form.fullname === "" || form.phone_number === "") {
+            return false;
         }
-    }
+        addContact([...contacts, form]);
+    };
 
-  return (
-    <div>
-        <div>
-            <input name='fullname' placeholder='İsim' onChange={onChanceInput}/>
-        </div>
+    return (
+        <form onSubmit={onSubmit}>
+            <div>
+                <div>
+                    <input name='fullname' placeholder='İsim' value={form.fullname} onChange={onChangeInput} />
+                </div>
 
-        <div>
-            <input name='phone_number' placeholder='Numara'onChange={onChanceInput}/>
-        </div>
-    </div>
-  )
+                <div>
+                    <input name='phone_number' placeholder='Numara' value={form.phone_number} onChange={onChangeInput} />
+                </div>
+
+                <button>Ekle</button>
+            </div>
+        </form>
+    );
 }
 
-export default Form
+export default Form;
