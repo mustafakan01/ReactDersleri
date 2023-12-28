@@ -14,7 +14,7 @@ function User() {
     <div>
         <h1>Users</h1>
         {
-            users.map(user=> <div key={user.id}>{user.name}</div>)
+            users.map(user=> <div key={user.id}> {user.name}</div>)
         }
     </div>
   )
