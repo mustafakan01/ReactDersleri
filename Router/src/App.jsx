@@ -1,14 +1,14 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-// Your component code where you're using the Switch component
-
-
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className='App'>
-       <Router>
+    <Router>
       <div>
         <nav>
           <ul>
@@ -39,8 +39,7 @@ function App() {
         </Switch>
       </div>
     </Router>
-    </div>
-  )
+  );
 }
 
 function Home() {
@@ -50,10 +49,7 @@ function Home() {
 function About() {
   return <h2>About</h2>;
 }
-
+ 
 function Users() {
   return <h2>Users</h2>;
 }
-
-
-export default App
